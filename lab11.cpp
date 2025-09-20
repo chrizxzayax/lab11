@@ -71,4 +71,7 @@ int main () {
         delete[] students[i].classes;
     }
     delete[] students;
+
+    cout << "all of the enrollment data processed and memory is cleaned up.\n";
+    return 0;
 }
