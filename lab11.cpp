@@ -54,6 +54,21 @@ int main () {
     }
 
     //output will display all students and their info, curses etc
-    cout 
+    cout << "\n-- summary of ENROLLED STUDENTS --\n";
+    for (int i = 0; i < studentsnum; i++) {
+        cout << "\nStudent #" << (i + 1) << endl;
+        cout << "Name: " << students[i].nam << endl;
+        cout << "ID: " << students[i].id << endl;
+        cout << "Courses Enrolled (" << students[i].coursesnum << "):" << endl;
+        for (int j = 0; j < students[i].coursesnum; j++) {
+            cout << "   -" << students[i].classes[j] << endl;
+        }
+        cout << endl;// extra line for better readability
+    }
 
+    //we need to clean the dynamically allocated memory
+    for (int i = 0; i < studentsnum; i++) {
+        delete[] students[i].classes;
+    }
+    delete[] students;
 }
